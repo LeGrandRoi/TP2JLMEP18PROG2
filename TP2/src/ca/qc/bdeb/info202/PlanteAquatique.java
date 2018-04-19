@@ -27,5 +27,22 @@ public class PlanteAquatique extends Specimen {
         this.typeEau = typeEau;
         this.typePlante = typePlante;
     }
+
+    public TypeEau getTypeEau() {
+        return typeEau;
+    }
+
+    public TypePlante getTypePlante() {
+        return typePlante;
+    }
+
+    public void setTypeEau(TypeEau typeEau) {
+        this.typeEau = typeEau;
+    }
+
+    public void setTypePlante(TypePlante typePlante) {
+        this.typePlante = typePlante;
+    }
+    
     
 }

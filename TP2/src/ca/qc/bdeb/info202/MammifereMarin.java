@@ -28,5 +28,24 @@ public class MammifereMarin extends Animal {
         this.typeEau = typeEau;
         this.typeManger = typeManger;
     }
+
+    public TypeEau getTypeEau() {
+        return typeEau;
+    }
+
+    public TypeManger getTypeManger() {
+        return typeManger;
+    }
+    
+
+    public void setTypeManger(TypeManger typeManger) {
+        this.typeManger = typeManger;
+    }
+
+    public void setTypeEau(TypeEau typeEau) {
+        this.typeEau = typeEau;
+    }
+    
+    
     
 }

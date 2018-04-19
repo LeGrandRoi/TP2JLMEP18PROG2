@@ -21,5 +21,14 @@ public class Poisson extends Animal {
         super(dateObservation, nom, taille, couleur, personne, sexe);
         this.typeEau = typeEau;
     }
+
+    public TypeEau getTypeEau() {
+        return typeEau;
+    }
+
+    public void setTypeEau(TypeEau typeEau) {
+        this.typeEau = typeEau;
+    }
+    
     
 }
