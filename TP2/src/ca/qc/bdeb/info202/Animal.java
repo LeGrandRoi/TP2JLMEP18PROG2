@@ -10,5 +10,18 @@ package ca.qc.bdeb.info202;
  * @author 1745982
  */
 public class Animal extends Specimen {
+    public enum Sexe{
+        MALE,
+        FEMELE
+    };
+    protected Sexe sexe;
+    
+
+    public Animal(String dateObservation, String nom, int taille, String couleur, String personne,Sexe sexe) 
+    {
+        super(dateObservation, nom, taille, couleur, personne);
+        this.sexe=sexe;
+    }
+   
     
 }

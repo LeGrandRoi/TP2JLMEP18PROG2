@@ -9,11 +9,11 @@ package ca.qc.bdeb.info202;
  *
  * @author 1745982
  */
-public class Mineral extends Specimen {
-
-    public Mineral(String dateObservation, String nom, int taille, String couleur, String personne) 
+public class Autre extends Animal {
+    
+    public Autre(String dateObservation, String nom, int taille, String couleur, String personne, Sexe sexe) 
     {
-        super(dateObservation, nom, taille, couleur, personne);
+        super(dateObservation, nom, taille, couleur, personne, sexe);
     }
     
 }
