@@ -9,6 +9,6 @@ package ca.qc.bdeb.info202;
  *
  * @author 1745982
  */
-public class Poisson extends Specimen {
+public class Poisson extends Animal {
     
 }

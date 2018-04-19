@@ -9,14 +9,6 @@ package ca.qc.bdeb.info202;
  *
  * @author 1745982
  */
-public class Specimen {
-    protected String dateObservation;
-    protected String nom;
-    protected int taille;
-    protected String couleur;
+public class Animal extends Specimen {
     
-    public Specimen (String dateObservation, String nom, int taille, String couleur)
-    {
-        
-    }
 }
