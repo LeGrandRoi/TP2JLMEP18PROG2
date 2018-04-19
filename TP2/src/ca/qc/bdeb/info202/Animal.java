@@ -16,12 +16,27 @@ public class Animal extends Specimen {
     };
     protected Sexe sexe;
     
+    
 
     public Animal(String dateObservation, String nom, int taille, String couleur, String personne,Sexe sexe) 
     {
         super(dateObservation, nom, taille, couleur, personne);
         this.sexe=sexe;
     }
+    
+    
+   // protected abstract void cri();
+
+    public Sexe getSexe() {
+        return sexe;
+    }
+
+    public void setSexe(Sexe sexe) {
+        this.sexe = sexe;
+    }
+    
+
+    
    
     
 }

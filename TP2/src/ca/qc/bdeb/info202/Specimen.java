@@ -24,4 +24,45 @@ public class Specimen {
         this.couleur=couleur;
         this.personne=personne;
     }
+
+    public String getCouleur() {
+        return couleur;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public String getPersonne() {
+        return personne;
+    }
+
+    public int getTaille() {
+        return taille;
+    }
+
+    public String getDateObservation() {
+        return dateObservation;
+    }
+
+    public void setCouleur(String couleur) {
+        this.couleur = couleur;
+    }
+
+    public void setDateObservation(String dateObservation) {
+        this.dateObservation = dateObservation;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPersonne(String personne) {
+        this.personne = personne;
+    }
+
+    public void setTaille(int taille) {
+        this.taille = taille;
+    }
+    
 }
