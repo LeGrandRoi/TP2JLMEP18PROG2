@@ -17,14 +17,7 @@ public class TP2 {
         // TODO code application logic here
 
         
-        System.out.println("Allo");
-        
-        System.out.println("Lol");
-        
-        System.out.println("salut");
-        String allo ="allo";
-        
-        System.out.println("lel");
+      
     }
     
 }
