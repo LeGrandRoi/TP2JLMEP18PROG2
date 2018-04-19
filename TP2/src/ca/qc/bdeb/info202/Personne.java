@@ -11,4 +11,6 @@ package ca.qc.bdeb.info202;
  */
 public class Personne {
     
+    private String nom, nomUtilisisateur, codeEncrypte;
+    private int age;
 }
