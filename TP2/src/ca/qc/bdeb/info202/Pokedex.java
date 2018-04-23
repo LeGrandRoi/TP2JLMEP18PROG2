@@ -5,8 +5,14 @@
  */
 package ca.qc.bdeb.info202;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -15,10 +21,16 @@ import java.util.Scanner;
 public class Pokedex {
    private ArrayList <Specimen> liste=new ArrayList();
    private Scanner clavier=new Scanner(System.in);
+   int compteur=compter(), compteurcolonne=compterligne();
+   String tabPersonne[][] = new String[compteur][compteurcolonne];
+
+   
+   
    
    public void jouer()
    {
-       afficherInterface();
+       remplir(tabPersonne);
+//       afficherInterface();
    }
    
    private void afficherInterface()
@@ -31,4 +43,79 @@ public class Pokedex {
        motPasse=clavier.nextLine();
        
    }
+        
+            public static int compter( )
+    {
+        BufferedReader lecture;
+        int compteur=0;
+       try {
+           lecture = new BufferedReader ( new FileReader("personnes.txt"));
+           String ligne=lecture.readLine();          
+           while( ligne !=null)
+           {
+               compteur++;
+               ligne=lecture.readLine();
+           }
+       } catch (FileNotFoundException ex) {
+           
+       } catch (IOException ex) {
+           
+       }
+       System.out.println(compteur);
+       return compteur;
+        
+    }
+     
+     public static int compterligne ( ) 
+     {
+         BufferedReader lecture;
+         int compteurcolonne=0;
+       try {
+           
+           lecture = new BufferedReader ( new FileReader("personnes.txt"));
+           String ligne=lecture.readLine();        
+           String tabcolonne[];
+           while (ligne !=null)
+           {
+               tabcolonne=ligne.split(";");
+               ligne=lecture.readLine();
+               compteurcolonne=tabcolonne.length;
+           }
+          
+       } catch (FileNotFoundException ex) {          
+       } catch (IOException ex) {         
+       }
+       System.out.println(compteurcolonne);
+        return compteurcolonne;
+     }
+     
+          public static void remplir (String tabPersonne[][]) 
+     {
+          BufferedReader lecture;
+       try {
+                 
+           lecture = new BufferedReader ( new FileReader("personnes.txt"));
+           String ligne=lecture.readLine();
+           for ( int i =0; i<tabPersonne.length; i++)
+           {        
+               tabPersonne[i]=ligne.split(";");
+               ligne=lecture.readLine();
+           }
+           
+       } catch (FileNotFoundException e) {
+           
+       } catch (IOException e) {
+           
+       }
+       
+         for (int i = 0; i < tabPersonne.length; i++) {
+             for (int j = 0; j < tabPersonne[i].length; j++) {
+                 System.out.print(tabPersonne[i][j]);
+                 System.out.print("\t");
+                 
+             }
+             System.out.println("");
+         }
+           
+     }
 }

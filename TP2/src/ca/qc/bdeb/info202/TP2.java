@@ -17,6 +17,7 @@ public class TP2 {
         // TODO code application logic here
         Pokedex p=new Pokedex();
         p.jouer();
+        
     }
     
 }
