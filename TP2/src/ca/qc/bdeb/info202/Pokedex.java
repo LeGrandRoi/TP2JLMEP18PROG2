@@ -24,7 +24,7 @@ public class Pokedex {
     private Scanner clavier = new Scanner(System.in);
     int compteur = compter(), compteurcolonne = compterligne();
     String tabPersonne[][] = new String[compteur][compteurcolonne];
-
+    
     public void jouer() {
         remplir(tabPersonne);
 //       afficherInterface();
@@ -43,6 +43,7 @@ public class Pokedex {
     public int compter() {
         BufferedReader lecture;
         int compteur = 0;
+        System.out.println("");
         try {
             lecture = new BufferedReader(new FileReader("personnes.txt"));
             String ligne = lecture.readLine();
