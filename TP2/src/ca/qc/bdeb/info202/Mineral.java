@@ -11,9 +11,12 @@ package ca.qc.bdeb.info202;
  */
 public class Mineral extends Specimen {
 
-    public Mineral(String dateObservation, String nom, int taille, String couleur, String personne) 
-    {
-        super(dateObservation, nom, taille, couleur, personne);
+    public Mineral(int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne) {
+        super(numeroSerie, dateObservation, nom, taille, couleur, personne);
     }
+
+    
+
+    
     
 }

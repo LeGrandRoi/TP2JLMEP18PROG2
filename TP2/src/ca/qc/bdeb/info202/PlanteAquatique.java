@@ -21,12 +21,12 @@ public class PlanteAquatique extends Specimen {
     };
     private TypePlante typePlante;
 
-    public PlanteAquatique(TypeEau typeEau, TypePlante typePlante, String dateObservation, String nom, int taille, String couleur, String personne) 
-    {
-        super(dateObservation, nom, taille, couleur, personne);
+    public PlanteAquatique(TypeEau typeEau, TypePlante typePlante, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne) {
+        super(numeroSerie, dateObservation, nom, taille, couleur, personne);
         this.typeEau = typeEau;
         this.typePlante = typePlante;
     }
+
 
     public TypeEau getTypeEau() {
         return typeEau;

@@ -16,11 +16,11 @@ public class Poisson extends Animal {
     };
     private TypeEau typeEau;
 
-    public Poisson(TypeEau typeEau, String dateObservation, String nom, int taille, String couleur, String personne, Sexe sexe) 
-    {
-        super(dateObservation, nom, taille, couleur, personne, sexe);
+    public Poisson(TypeEau typeEau, Sexe sexe, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne) {
+        super(sexe, numeroSerie, dateObservation, nom, taille, couleur, personne);
         this.typeEau = typeEau;
     }
+
 
     public TypeEau getTypeEau() {
         return typeEau;

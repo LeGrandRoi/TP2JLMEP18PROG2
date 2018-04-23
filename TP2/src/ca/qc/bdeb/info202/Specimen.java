@@ -10,19 +10,21 @@ package ca.qc.bdeb.info202;
  * @author 1745982
  */
 public class Specimen {
-    protected String dateObservation;
-    protected String nom;
-    protected int taille;
-    protected String couleur;
-    protected String personne;
+    protected String dateObservation;//
+    protected String nom;//
+    protected int taille;//
+    protected String couleur;//
+    protected Personne personne;
+    protected int numeroSerie;
     
-    public Specimen (String dateObservation, String nom, int taille, String couleur, String personne)
+    public Specimen (int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne)
     {
         this.dateObservation=dateObservation;
         this.nom=nom;
         this.taille=taille;
         this.couleur=couleur;
         this.personne=personne;
+        this.numeroSerie=numeroSerie;
     }
 
     public String getCouleur() {
@@ -33,7 +35,7 @@ public class Specimen {
         return nom;
     }
 
-    public String getPersonne() {
+    public Personne getPersonne() {
         return personne;
     }
 
@@ -57,12 +59,20 @@ public class Specimen {
         this.nom = nom;
     }
 
-    public void setPersonne(String personne) {
+    public void setPersonne(Personne personne) {
         this.personne = personne;
     }
 
     public void setTaille(int taille) {
         this.taille = taille;
+    }
+
+    public int getNumeroSerie() {
+        return numeroSerie;
+    }
+
+    public void setNumeroSerie(int numeroSerie) {
+        this.numeroSerie = numeroSerie;
     }
     
 }
