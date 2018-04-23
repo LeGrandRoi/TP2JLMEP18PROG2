@@ -11,9 +11,10 @@ package ca.qc.bdeb.info202;
  */
 public class Autre extends Animal {
     
-    public Autre(String dateObservation, String nom, int taille, String couleur, String personne, Sexe sexe) 
-    {
-        super(dateObservation, nom, taille, couleur, personne, sexe);
+    public Autre(Sexe sexe, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne) {
+        super(sexe, numeroSerie, dateObservation, nom, taille, couleur, personne);
     }
+    
+    
     
 }

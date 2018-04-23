@@ -15,14 +15,13 @@ public class Animal extends Specimen {
         FEMELE
     };
     protected Sexe sexe;
-    
-    
 
-    public Animal(String dateObservation, String nom, int taille, String couleur, String personne,Sexe sexe) 
-    {
-        super(dateObservation, nom, taille, couleur, personne);
-        this.sexe=sexe;
+    public Animal(Sexe sexe, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne) {
+        super(numeroSerie, dateObservation, nom, taille, couleur, personne);
+        this.sexe = sexe;
     }
+
+    
     
     
    // protected abstract void cri();
