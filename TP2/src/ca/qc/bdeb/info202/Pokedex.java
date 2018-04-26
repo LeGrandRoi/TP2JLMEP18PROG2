@@ -5,7 +5,6 @@
  */
 package ca.qc.bdeb.info202;
 
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -25,7 +24,7 @@ import java.util.logging.Logger;
  */
 public class Pokedex {
 
-
+    
     private ArrayList<Specimen> liste = new ArrayList();
     private Scanner clavier = new Scanner(System.in);
     int compteur = compter(), compteurcolonne = compterligne();
@@ -47,6 +46,7 @@ public class Pokedex {
    }
    public void jouer() {
         remplir(tabPersonne);
+        login();
 //       afficherInterface();
     }
    
@@ -347,6 +347,8 @@ public class Pokedex {
    }
    
 ////////////////////////////////////////////////////////////////////////////////
+
+
     private void afficherInterface() {
         System.out.println("veuillez entrer votre nom d'utilisateur: ");
         String nomUtilisateur;
@@ -427,13 +429,72 @@ public class Pokedex {
 
     }
 
-    public void login() {
+    public String login() {
+        String login=null;
+        String motDePasseEncryptée=null, motDePasseDécryptée=null, motDePasse=null, nom = null;
+        int emplacementMdpi=0,emplacementMdpj=0;
+        boolean erreur, trouverlogin = false, trouvermdp = false;
         
-    }
-    
-    public boolean pseudo(){
+        do{
+            System.out.println("Entrez votre nom d'utilisateur.");           
+            try {
+                login = clavier.nextLine();
+                System.out.println("Entrez votre mot de passe.");
+                motDePasse = clavier.nextLine();
+                erreur=false;
+            } catch (StringIndexOutOfBoundsException e) {
+               
+                erreur = true;
+            }
+        
+        if ( erreur==false ){
+        for (int i = 0; i < tabPersonne.length; i++) {
+            for (int j = 0; j < tabPersonne[i].length; j++) {
+             
+                if(login.equals(tabPersonne[i][j])){
+                    trouverlogin=true;
+                    emplacementMdpi=i;
+                    emplacementMdpj=j+1;
+                }else{
+                    trouvermdp=false;
+                    
+                }                   
+            }
+        }
+        }
+        if(trouverlogin==true){
+      
+        motDePasseEncryptée=tabPersonne[emplacementMdpi][emplacementMdpj];
+        try{
+            Encryption encryption = new Encryption();
+            String decrypted = encryption.decrypt(motDePasseEncryptée);
+            motDePasseDécryptée=decrypted;          
+        } catch (Exception ex) {
+            
+        }
+        System.out.println(motDePasseDécryptée);
+        
+        if ( motDePasse.equals(motDePasseDécryptée)){
+            
+            nom=tabPersonne[emplacementMdpi][emplacementMdpj+1];
+            System.out.println("Bienvenue dans le Pokédex, "+nom);
+            trouvermdp=true;
+        }else{
+            trouvermdp=false;
+            
+        }
+        }
+        
+        if(erreur==true || trouverlogin==false || trouvermdp==false){
+            System.out.println("Le mot de passe entrer ou le nom d'utilisateur n'est pas valide.");
+            erreur=true;
+        }
+    } while(erreur==true);
+        
+        return nom;
+    } 
+
+    public boolean pseudo() {
         return true;
     }
 }
-
- 
