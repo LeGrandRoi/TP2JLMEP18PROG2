@@ -349,16 +349,6 @@ public class Pokedex {
 ////////////////////////////////////////////////////////////////////////////////
 
 
-    private void afficherInterface() {
-        System.out.println("veuillez entrer votre nom d'utilisateur: ");
-        String nomUtilisateur;
-        nomUtilisateur = clavier.nextLine();
-        System.out.println("Veuillez entrer votre mot de passe: ");
-        String motPasse;
-        motPasse = clavier.nextLine();
-
-    }
-
     public int compter() {
         BufferedReader lecture;
         int compteur = 0;
