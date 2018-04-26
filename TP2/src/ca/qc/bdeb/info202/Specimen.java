@@ -10,14 +10,15 @@ package ca.qc.bdeb.info202;
  * @author 1745982
  */
 public class Specimen {
-    protected String dateObservation;//
-    protected String nom;//
-    protected int taille;//
-    protected String couleur;//
+    protected String dateObservation;
+    protected String nom;
+    protected int taille;
+    protected String couleur;
     protected Personne personne;
     protected int numeroSerie;
+    int quantiteObservee;
     
-    public Specimen (int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne)
+    public Specimen (int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee)
     {
         this.dateObservation=dateObservation;
         this.nom=nom;
@@ -25,6 +26,7 @@ public class Specimen {
         this.couleur=couleur;
         this.personne=personne;
         this.numeroSerie=numeroSerie;
+        this.quantiteObservee=quantiteObservee;
     }
 
     public String getCouleur() {
@@ -74,5 +76,14 @@ public class Specimen {
     public void setNumeroSerie(int numeroSerie) {
         this.numeroSerie = numeroSerie;
     }
+
+    public int getQuantiteObservee() {
+        return quantiteObservee;
+    }
+
+    public void setQuantiteObservee(int quantiteObservee) {
+        this.quantiteObservee = quantiteObservee;
+    }
+    
     
 }

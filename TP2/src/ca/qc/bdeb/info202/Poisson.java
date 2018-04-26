@@ -5,19 +5,18 @@
  */
 package ca.qc.bdeb.info202;
 
+import ca.qc.bdeb.info202.MammifereMarin.TypeEau;
+
 /**
  *
  * @author 1745982
  */
 public class Poisson extends Animal {
-    public enum TypeEau {
-        DOUCE,
-        SALEE
-    };
+    
     private TypeEau typeEau;
 
-    public Poisson(TypeEau typeEau, Sexe sexe, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne) {
-        super(sexe, numeroSerie, dateObservation, nom, taille, couleur, personne);
+    public Poisson(TypeEau typeEau, Sexe sexe, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee) {
+        super(sexe, numeroSerie, dateObservation, nom, taille, couleur, personne,quantiteObservee);
         this.typeEau = typeEau;
     }
 

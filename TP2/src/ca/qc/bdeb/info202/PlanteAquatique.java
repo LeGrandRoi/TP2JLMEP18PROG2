@@ -5,15 +5,14 @@
  */
 package ca.qc.bdeb.info202;
 
+import ca.qc.bdeb.info202.MammifereMarin.TypeEau;
+
 /**
  *
  * @author 1745982
  */
 public class PlanteAquatique extends Specimen {
-    public enum TypeEau {
-        DOUCE,
-        SALEE
-    };
+   
     private TypeEau typeEau;
     public enum TypePlante{
         FLOTTANTE,
@@ -21,8 +20,8 @@ public class PlanteAquatique extends Specimen {
     };
     private TypePlante typePlante;
 
-    public PlanteAquatique(TypeEau typeEau, TypePlante typePlante, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne) {
-        super(numeroSerie, dateObservation, nom, taille, couleur, personne);
+    public PlanteAquatique(TypeEau typeEau, TypePlante typePlante, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee) {
+        super(numeroSerie, dateObservation, nom, taille, couleur, personne,quantiteObservee);
         this.typeEau = typeEau;
         this.typePlante = typePlante;
     }

@@ -16,8 +16,8 @@ public class Animal extends Specimen {
     };
     protected Sexe sexe;
 
-    public Animal(Sexe sexe, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne) {
-        super(numeroSerie, dateObservation, nom, taille, couleur, personne);
+    public Animal(Sexe sexe, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee) {
+        super(numeroSerie, dateObservation, nom, taille, couleur, personne,quantiteObservee);
         this.sexe = sexe;
     }
 

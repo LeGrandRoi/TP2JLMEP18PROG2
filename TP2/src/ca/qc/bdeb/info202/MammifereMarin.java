@@ -22,8 +22,8 @@ public class MammifereMarin extends Animal {
     private TypeEau typeEau;
     private TypeManger typeManger;
 
-    public MammifereMarin(TypeEau typeEau, TypeManger typeManger, Sexe sexe, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne) {
-        super(sexe, numeroSerie, dateObservation, nom, taille, couleur, personne);
+    public MammifereMarin(TypeEau typeEau, TypeManger typeManger, Sexe sexe, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee) {
+        super(sexe, numeroSerie, dateObservation, nom, taille, couleur, personne,quantiteObservee);
         this.typeEau = typeEau;
         this.typeManger = typeManger;
     }
