@@ -16,11 +16,28 @@ public class Personne {
     private String nom, nomUtilisisateur, codeEncrypte;
     private int age;
 
-    public Personne(String nom, String nomUtilisisateur, String codeEncrypte, int age) {
-        this.nom = nom;
+    public Personne( String nomUtilisisateur, String codeEncrypte,String nom, int age) {
+        
         this.nomUtilisisateur = nomUtilisisateur;
         this.codeEncrypte = codeEncrypte;
+        this.nom = nom;
         this.age = age;
+    }
+
+    public String getNomUtilisisateur() {
+        return nomUtilisisateur;
+    }
+
+    public String getCodeEncrypte() {
+        return codeEncrypte;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public int getAge() {
+        return age;
     }
     
 
