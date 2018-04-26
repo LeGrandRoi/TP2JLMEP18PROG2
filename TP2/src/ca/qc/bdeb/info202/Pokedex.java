@@ -27,8 +27,9 @@ public class Pokedex {
     
     private ArrayList<Specimen> liste = new ArrayList();
     private Scanner clavier = new Scanner(System.in);
-    int compteur = compter(), compteurcolonne = compterligne();
-    String tabPersonne[][] = new String[compteur][compteurcolonne];
+    private int compteur = compter(), compteurcolonne = compterligne();
+    private String tabPersonne[][] = new String[compteur][compteurcolonne];
+    private ArrayList<Personne> listePersonne = new ArrayList();
      Personne personneActuelle;
      int cptSerie=0;
      int cptPoisson=0;
@@ -393,6 +394,7 @@ public class Pokedex {
 
     public void remplir(String tabPersonne[][]) {
         BufferedReader lecture;
+        
         try {
 
             lecture = new BufferedReader(new FileReader("personnes.txt"));
@@ -407,19 +409,24 @@ public class Pokedex {
         } catch (IOException e) {
 
         }
-
+        
         for (int i = 0; i < tabPersonne.length; i++) {
             for (int j = 0; j < tabPersonne[i].length; j++) {
-                System.out.print(tabPersonne[i][j]);
-                System.out.print("\t");
-
+               
             }
-            System.out.println("");
+            int age = Integer.parseInt(tabPersonne[i][3]);
+            Personne personne = new Personne (tabPersonne[i][0], tabPersonne[i][1], tabPersonne[i][2], age);
+            listePersonne.add(personne);
         }
+        
+        System.out.println(listePersonne.get(0).getNom());
+        System.out.println(listePersonne.get(1).getNom());
+        System.out.println(listePersonne.get(2).getNom());
+        System.out.println(listePersonne.get(3).getNom());
 
     }
 
-    public String login() {
+    public Personne login() {
         String login=null;
         String motDePasseEncryptée=null, motDePasseDécryptée=null, motDePasse=null, nom = null;
         int emplacementMdpi=0,emplacementMdpj=0;
@@ -481,10 +488,14 @@ public class Pokedex {
         }
     } while(erreur==true);
         
-        return nom;
+        for (int i = 0; i < listePersonne.size(); i++) {
+            if ( nom.equals(listePersonne.get(i).getNom()))
+            personneActuelle=listePersonne.get(i);
+        }
+        return personneActuelle;
     } 
 
-    public boolean pseudo() {
-        return true;
-    }
+   public void personne(String nom){
+       
+   }
 }
