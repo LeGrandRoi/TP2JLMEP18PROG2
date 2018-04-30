@@ -5,11 +5,14 @@
  */
 package ca.qc.bdeb.info202;
 
+import java.io.Serializable;
+
 /**
  *
  * @author 1745982
  */
-public class Specimen {
+public class Specimen implements Serializable {
+
     protected String dateObservation;
     protected String nom;
     protected int taille;
@@ -17,16 +20,15 @@ public class Specimen {
     protected Personne personne;
     protected int numeroSerie;
     int quantiteObservee;
-    
-    public Specimen (int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee)
-    {
-        this.dateObservation=dateObservation;
-        this.nom=nom;
-        this.taille=taille;
-        this.couleur=couleur;
-        this.personne=personne;
-        this.numeroSerie=numeroSerie;
-        this.quantiteObservee=quantiteObservee;
+
+    public Specimen(int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee) {
+        this.dateObservation = dateObservation;
+        this.nom = nom;
+        this.taille = taille;
+        this.couleur = couleur;
+        this.personne = personne;
+        this.numeroSerie = numeroSerie;
+        this.quantiteObservee = quantiteObservee;
     }
 
     public String getCouleur() {
@@ -84,6 +86,7 @@ public class Specimen {
     public void setQuantiteObservee(int quantiteObservee) {
         this.quantiteObservee = quantiteObservee;
     }
-    
-    
+
+
+
 }

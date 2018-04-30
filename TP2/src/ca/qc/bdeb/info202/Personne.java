@@ -5,13 +5,15 @@
  */
 package ca.qc.bdeb.info202;
 
+import java.io.Serializable;
+
 
 
 /**
  *
  * @author 1660802
  */
-public class Personne {
+public class Personne implements Serializable {
     
     private String nom, nomUtilisisateur, codeEncrypte;
     private int age;
