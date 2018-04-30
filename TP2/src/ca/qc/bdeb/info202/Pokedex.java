@@ -53,150 +53,6 @@ public class Pokedex {
         afficherMenu();
 
     }
-<<<<<<< HEAD
-
-    private void afficherMenu() {
-        int choix = 0;
-        boolean ok = true;
-        do {
-            do {
-                ok = true;
-                System.out.println("Veuillez choisir une option:");
-                System.out.println("1. Consulter les spécimens déjà saisis.\n"
-                        + "2. Saisir un nouveau spécimen.\n"
-                        + "3. Modifier un spécimen.\n"
-                        + "4. Statistiques.\n"
-                        + "5. Quitter.");
-                try {
-                    choix = Integer.parseInt(clavier.nextLine());
-                } catch (NumberFormatException e) {
-                    ok = false;
-                }
-                if (choix < 1 || choix > 5) {
-                    System.out.println("I. Veuillez entrer un choix entre 1 et 5.");
-                    System.out.println("");
-                }
-            } while (choix < 1 || choix > 5 || !ok);
-            System.out.println("");
-            switch (choix) {
-                case 1:
-                    consulterSpecimens();
-                    break;
-                case 2:
-                    nouveauSpecimen();
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    statistiques();
-                    break;
-                case 5: {
-                    fichierBinaireFermeture(liste);
-                    System.exit(0);
-                }
-                break;
-            }
-        } while (choix != 5);
-
-    }
-
-    private void consulterSpecimens() {
-
-        System.out.println("Affichage de toutes les entrées du pokédex:");
-        System.out.println("1.- De façon croissante:");
-        for (int i = 1; i < liste.size(); i++) {
-            String valeur = liste.get(i).getNom();
-            int position = i;
-            while (position > 0 && liste.get(i - 1).getNom().compareTo(valeur) > 0) {
-                liste.set(position, liste.get(position - 1));
-            }
-        }
-        for (int i = 0; i < liste.size(); i++) {
-            System.out.println(liste.get(i).getNom());
-        }
-        for (int i = 0; i < liste.size(); i++) {
-
-        }
-        System.out.println("2.- De façon décroissante: ");
-    }
-
-    private void nouveauSpecimen() {
-        TypeEau typeEau = null;
-        TypePlante typePlante = null;
-        TypeManger typeManger = null;
-        Sexe sexe = null;
-        int numeroSerie = 0;
-        String dateObservation = null;
-        String nom = null;
-        int taille = 0;
-        String couleur = null;
-        Personne personne = null;
-        int quantiteObservee = 0;
-
-        int typeS = 0;
-        boolean ok = true;
-
-        do {
-            System.out.println("Type de spécimen:\n"
-                    + "1-Poisson.\n"
-                    + "2-Mammifère marin.\n"
-                    + "3-Plante auqatique.\n"
-                    + "4-Minéral.\n"
-                    + "5-Autre.\n");
-            try {
-                ok = true;
-                typeS = Integer.parseInt(clavier.nextLine());
-            } catch (NumberFormatException e) {
-                ok = false;
-            }
-            if (typeS < 1 || typeS > 5) {
-                System.out.println("I. Veuillez entrer un choix entre 1 et 5.");
-                System.out.println("");
-            }
-        } while (typeS < 1 || typeS > 5 || !ok);
-
-        if (typeS == 1 || typeS == 2 || typeS == 3 || typeS == 4 || typeS == 5) {
-            System.out.println("Veuillez entrer le nom du spécimen:");
-            nom = clavier.nextLine();
-        }
-
-        if (typeS == 1 || typeS == 2 || typeS == 3 || typeS == 4 || typeS == 5) {
-            System.out.println("Veuillez entrer la taille du spécimen: (cm)");
-            do {
-                try {
-                    ok = true;
-                    taille = Integer.parseInt(clavier.nextLine());
-                } catch (NumberFormatException e) {
-                    ok = false;
-                }
-            } while (!ok);
-        }
-
-        if (typeS == 1 || typeS == 2 || typeS == 3 || typeS == 4 || typeS == 5) {
-            System.out.println("Veuillez entrer la date d'observation du spécimen: (AAAAMMJJ)");
-            dateObservation = clavier.nextLine();
-        }
-
-        if (typeS == 1 || typeS == 2 || typeS == 3 || typeS == 4 || typeS == 5) {
-            System.out.println("Veuillez entrer la couleur du spécimen:");
-            couleur = clavier.nextLine();
-        }
-
-        if (typeS == 1 || typeS == 2 || typeS == 3 || typeS == 4 || typeS == 5) {
-            System.out.println("Veuillez entrer la quantitée observée:");
-            do {
-                try {
-                    ok = true;
-                    quantiteObservee = Integer.parseInt(clavier.nextLine());
-                } catch (NumberFormatException e) {
-                    ok = false;
-                }
-            } while (!ok);
-
-        }
-
-        if (typeS == 1 || typeS == 2 || typeS == 5) {
-=======
    
    private void afficherMenu()
    {
@@ -567,7 +423,6 @@ public class Pokedex {
         
         if (typeS==2 || typeS==3 || typeS==4)
         {
->>>>>>> e4a70a81ad4911dba28fb00ec68772d0cfff3fac
             int choix = 0;
             System.out.println("Veuillez entrer le genre: (1. pour mâle et 2. pour femelle)");
             do {
@@ -647,6 +502,7 @@ public class Pokedex {
             personne = personneActuelle;
         }
 
+
         if (typeS == 1) {
             Poisson poisson = new Poisson(typeEau, sexe, numeroSerie, dateObservation, nom, taille, couleur, personne, quantiteObservee);
             liste.add(poisson);
@@ -669,7 +525,7 @@ public class Pokedex {
             cptAutre = cptAutre + 1;
             ;
         }
-=======
+
         
         if(typeS==1)
         {
@@ -727,7 +583,7 @@ public class Pokedex {
             cptAutre=cptAutre+1;
             personneActuelle.setNbActions(personneActuelle.getNbActions()+1);
 ;        }
->>>>>>> e4a70a81ad4911dba28fb00ec68772d0cfff3fac
+
         System.out.println("Votre spécimen à été créé!");
         System.out.println("");
     }
@@ -821,11 +677,9 @@ public class Pokedex {
             }
             int nbActions=0;
             int age = Integer.parseInt(tabPersonne[i][3]);
-<<<<<<< HEAD
-            Personne personne = new Personne(tabPersonne[i][0], tabPersonne[i][1], tabPersonne[i][2], age);
-=======
+
             Personne personne = new Personne (tabPersonne[i][0], tabPersonne[i][1], tabPersonne[i][2], age, nbActions);
->>>>>>> e4a70a81ad4911dba28fb00ec68772d0cfff3fac
+
             listePersonne.add(personne);
         }
 
