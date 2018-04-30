@@ -17,6 +17,8 @@ public class Poisson extends Animal {
 
     public Poisson(TypeEau typeEau, Sexe sexe, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee) {
         super(sexe, numeroSerie, dateObservation, nom, taille, couleur, personne,quantiteObservee);
+    public Poisson(TypeEau typeEau, Sexe sexe, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee,String type) {
+        super(sexe, numeroSerie, dateObservation, nom, taille, couleur, personne,quantiteObservee,type);
         this.typeEau = typeEau;
     }
 
@@ -29,5 +31,10 @@ public class Poisson extends Animal {
         this.typeEau = typeEau;
     }
     
+    @Override
+    public String toString()
+    {
+        return "numéroSérie: "+numeroSerie+", dateObservation: "+dateObservation+", nom: "+nom+", taille: "+taille+", couleur: "+couleur+", personne: "+personne+", quantitéObservée: "+quantiteObservee+", type: "+type+", sexe: "+sexe+", typeEau: "+typeEau;
+    }
     
 }

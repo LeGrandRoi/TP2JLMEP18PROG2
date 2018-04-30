@@ -19,6 +19,7 @@ public class Specimen implements Serializable {
     protected String couleur;
     protected Personne personne;
     protected int numeroSerie;
+<<<<<<< HEAD
     int quantiteObservee;
 
     public Specimen(int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee) {
@@ -29,6 +30,21 @@ public class Specimen implements Serializable {
         this.personne = personne;
         this.numeroSerie = numeroSerie;
         this.quantiteObservee = quantiteObservee;
+=======
+    protected int quantiteObservee;
+    protected String type;
+    
+    public Specimen (int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee,String type)
+    {
+        this.dateObservation=dateObservation;
+        this.nom=nom;
+        this.taille=taille;
+        this.couleur=couleur;
+        this.personne=personne;
+        this.numeroSerie=numeroSerie;
+        this.quantiteObservee=quantiteObservee;
+        this.type=type;
+>>>>>>> e4a70a81ad4911dba28fb00ec68772d0cfff3fac
     }
 
     public String getCouleur() {
@@ -87,6 +103,21 @@ public class Specimen implements Serializable {
         this.quantiteObservee = quantiteObservee;
     }
 
+<<<<<<< HEAD
 
 
+=======
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+    
+    
+    
+    
+    
+>>>>>>> e4a70a81ad4911dba28fb00ec68772d0cfff3fac
 }

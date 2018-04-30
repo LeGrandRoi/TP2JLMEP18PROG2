@@ -13,9 +13,16 @@ public class Mineral extends Specimen {
 
     public Mineral(int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee) {
         super(numeroSerie, dateObservation, nom, taille, couleur, personne,quantiteObservee);
+    public Mineral(int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee,String type) {
+        super(numeroSerie, dateObservation, nom, taille, couleur, personne,quantiteObservee,type);
     }
 
     
+    @Override
+    public String toString()
+    {
+        return "numéroSérie: "+numeroSerie+", dateObservation: "+dateObservation+", nom: "+nom+", taille: "+taille+", couleur: "+couleur+", personne: "+personne+", quantitéObservée: "+quantiteObservee+", type: "+type;
+    }
 
     
     

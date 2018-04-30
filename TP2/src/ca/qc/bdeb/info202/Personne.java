@@ -17,13 +17,16 @@ public class Personne implements Serializable {
     
     private String nom, nomUtilisisateur, codeEncrypte;
     private int age;
+    private int nbActions;
 
     public Personne( String nomUtilisisateur, String codeEncrypte,String nom, int age) {
+    public Personne( String nomUtilisisateur, String codeEncrypte,String nom, int age, int nbActions) {
         
         this.nomUtilisisateur = nomUtilisisateur;
         this.codeEncrypte = codeEncrypte;
         this.nom = nom;
         this.age = age;
+        this.nbActions=nbActions;
     }
 
     public String getNomUtilisisateur() {
@@ -41,6 +44,15 @@ public class Personne implements Serializable {
     public int getAge() {
         return age;
     }
+
+    public int getNbActions() {
+        return nbActions;
+    }
+
+    public void setNbActions(int nbActions) {
+        this.nbActions = nbActions;
+    }
+    
     
 
     
