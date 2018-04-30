@@ -16,9 +16,10 @@ public class Specimen {
     protected String couleur;
     protected Personne personne;
     protected int numeroSerie;
-    int quantiteObservee;
+    protected int quantiteObservee;
+    protected String type;
     
-    public Specimen (int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee)
+    public Specimen (int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee,String type)
     {
         this.dateObservation=dateObservation;
         this.nom=nom;
@@ -27,6 +28,7 @@ public class Specimen {
         this.personne=personne;
         this.numeroSerie=numeroSerie;
         this.quantiteObservee=quantiteObservee;
+        this.type=type;
     }
 
     public String getCouleur() {
@@ -84,6 +86,17 @@ public class Specimen {
     public void setQuantiteObservee(int quantiteObservee) {
         this.quantiteObservee = quantiteObservee;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+    
+    
+    
     
     
 }

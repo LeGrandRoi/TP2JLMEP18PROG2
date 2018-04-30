@@ -15,15 +15,15 @@ public class MammifereMarin extends Animal {
         SALEE
     };
     
-    public  enum TypeManger {
+    public enum TypeManger {
         CARNIVORE,
         VEGETARIEN
     };
     private TypeEau typeEau;
     private TypeManger typeManger;
 
-    public MammifereMarin(TypeEau typeEau, TypeManger typeManger, Sexe sexe, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee) {
-        super(sexe, numeroSerie, dateObservation, nom, taille, couleur, personne,quantiteObservee);
+    public MammifereMarin(TypeEau typeEau, TypeManger typeManger, Sexe sexe, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee,String type) {
+        super(sexe, numeroSerie, dateObservation, nom, taille, couleur, personne,quantiteObservee,type);
         this.typeEau = typeEau;
         this.typeManger = typeManger;
     }
@@ -43,6 +43,12 @@ public class MammifereMarin extends Animal {
 
     public void setTypeEau(TypeEau typeEau) {
         this.typeEau = typeEau;
+    }
+    
+    @Override
+    public String toString()
+    {
+        return "numéroSérie: "+numeroSerie+", dateObservation: "+dateObservation+", nom: "+nom+", taille: "+taille+", couleur: "+couleur+", personne: "+personne+", quantitéObservée: "+quantiteObservee+", type: "+type+", sexe: "+sexe+", typeEau: "+typeEau+", typeManger: "+typeManger;
     }
     
     
