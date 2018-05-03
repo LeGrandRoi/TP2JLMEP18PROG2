@@ -406,32 +406,7 @@ public class Pokedex {
                
        }
        
-       
         if (typeS==1 || typeS==2 || typeS==5)
-       {
-           int choix = 0;
-           System.out.println("Veuillez entrer le genre: (1. pour mâle et 2. pour femelle)");
-           do{
-           try{
-               ok=true;
-           choix=Integer.parseInt(clavier.nextLine());
-           }
-           catch (NumberFormatException e){
-               ok=false;
-           }
-           } while (ok==false || choix<1 || choix>2);
-           if (choix==1)
-           {
-               sexe=Sexe.MALE;
-           }
-           else if (choix==2)
-           {
-               sexe=Sexe.FEMELE;
-           }
-       }
-        
-        
-        if (typeS==2 || typeS==3 || typeS==4)
         {
             int choix = 0;
             System.out.println("Veuillez entrer le genre: (1. pour mâle et 2. pour femelle)");
@@ -620,6 +595,7 @@ public class Pokedex {
                    + "3. Plante Aquatique\n"
                    + "4. Minéral\n"
                    + "5. autre");
+               System.out.println("");
            try{
                ok=true;
                choixx=Integer.parseInt(clavier.nextLine());
@@ -634,7 +610,7 @@ public class Pokedex {
               ok=false;
           }
            } while (!ok);
-           String type;
+           String type = null;
            if (choixx==1)
            {
                type="Poisson";
@@ -655,6 +631,41 @@ public class Pokedex {
            {
                type="Autre";
            }
+           
+           int cpt=0;
+           int choixxx=0;
+           System.out.println("Veuillez choisir un spécimen à supprimer:");
+           for (int i=0;i<liste.size();i++)
+           {
+               if (liste.get(i).getType().equals(type))
+               {
+                   cpt++;
+                   System.out.println((i+1)+". "+liste.get(i));
+               }
+           }
+           do{
+               try{
+                   ok=true;
+                   choixxx=Integer.parseInt(clavier.nextLine())-1;
+               }
+               catch(NumberFormatException e){
+                   ok=false;
+               }
+               if (choixxx<cpt || choixxx>cpt)
+               {
+                   System.out.println("Veuillez entrer un choix entre 1 et "+cpt+".");
+                   System.out.println("");
+                   ok=false;
+               }
+           } while (!ok);
+           for (int i=0;i<liste.size();i++)
+           {
+               if (liste.get(i).getType().equals(type))
+               {
+                   liste.
+               }
+           } 
+           
        }
        
        }
