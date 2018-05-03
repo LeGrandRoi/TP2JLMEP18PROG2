@@ -19,9 +19,8 @@ public class Personne implements Serializable {
     private int age;
     private int nbActions;
 
-    public Personne( String nomUtilisisateur, String codeEncrypte,String nom, int age) {
-    public Personne( String nomUtilisisateur, String codeEncrypte,String nom, int age, int nbActions) {
-        
+    public Personne( String nomUtilisisateur, String codeEncrypte,String nom, int age, int nbActions) 
+        { 
         this.nomUtilisisateur = nomUtilisisateur;
         this.codeEncrypte = codeEncrypte;
         this.nom = nom;
@@ -53,9 +52,9 @@ public class Personne implements Serializable {
         this.nbActions = nbActions;
     }
     
-    
+}
 
     
     
     
-}
+

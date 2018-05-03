@@ -79,6 +79,7 @@ public class Pokedex {
        {
            System.out.println("I. Veuillez entrer un choix entre 1 et 5.");
            System.out.println("");
+           ok=false;
        }
        } while (choix<1 || choix>5 || !ok);
        System.out.println("");
@@ -103,6 +104,12 @@ public class Pokedex {
    {
        int choix=0;
        boolean ok=true;
+       if (liste.size()==0)
+       {
+           System.out.println("Il n'y a présentement pas de spécimens dans le pokédex.");
+           System.out.println("");
+       }
+       else{
        System.out.println("Vous avez choisi de consulter les spéimens.");
        do
        {
@@ -299,6 +306,7 @@ public class Pokedex {
                    }
                }
            }
+       }
        }
    }
    
@@ -569,9 +577,88 @@ public class Pokedex {
    
    private void modifierSpecimen()
    {
+       
+       int choix=0;
+       boolean ok=true;
+       if (liste.size()==0)
+       {
+           System.out.println("Il n'y a présentement pas de spécimen dans le pokédex.");
+           System.out.println("");
+       }
+       else
+       {
        System.out.println("Vous avez choisi de modifier un spécimen.");
+       do{
        System.out.println("Que voulez-vous faire?\n"
-               + "1. ");
+               + "1. Supprimer un spécimen.\n"
+               + "2. Modifier la quantité d'un spécimen observé.\n");
+       System.out.println("");
+       try{
+           ok=true;
+           choix=Integer.parseInt(clavier.nextLine());
+       }
+       catch(NumberFormatException e){
+           ok=false;
+       }
+       if (choix<1 || choix>2)
+       {
+           System.out.println("Veuillez entrer un choix entre 1 et 2.");
+           System.out.println("");
+           ok=false;
+       }
+       } while(!ok);
+       
+       ok=true;
+       int choixx=0;
+       if (choix==1)
+       {
+           do
+           {
+           System.out.println("Quel est le type du spécimen que vous voulez supprimer?");
+           System.out.println("1. Poisson\n"
+                   + "2. Mammifère marin\n"
+                   + "3. Plante Aquatique\n"
+                   + "4. Minéral\n"
+                   + "5. autre");
+           try{
+               ok=true;
+               choixx=Integer.parseInt(clavier.nextLine());
+           }
+           catch (NumberFormatException e){
+               ok=false;
+           }
+           if (choix<1 || choix>5)
+          {
+              System.out.println("Veuillez entrer un choix entre 1 et 5.");
+              System.out.println("");
+              ok=false;
+          }
+           } while (!ok);
+           String type;
+           if (choixx==1)
+           {
+               type="Poisson";
+           }
+           else if(choixx==2)
+           {
+               type="MammifereMarin";
+           }
+           else if(choixx==3)
+           {
+               type="PlanteAquatique";
+           }
+           else if(choixx==4)
+           {
+               type="Mineral";
+           }
+           else if(choixx==5)
+           {
+               type="Autre";
+           }
+       }
+       
+       }
+       
    }
    
 
