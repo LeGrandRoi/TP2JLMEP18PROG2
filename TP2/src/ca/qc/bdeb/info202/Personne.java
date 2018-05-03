@@ -19,14 +19,11 @@ public class Personne implements Serializable {
     private int age;
     private int nbActions;
 
-<<<<<<< HEAD
+
 
     public Personne( String nomUtilisisateur, String codeEncrypte,String nom, int age, int nbActions) {
         
-=======
-   
-    public Personne( String nomUtilisisateur, String codeEncrypte,String nom, int age, int nbActions) {
->>>>>>> 7857ab9d4879d15e22dbac126b548c59792c47dc
+
 
         this.nomUtilisisateur = nomUtilisisateur;
         this.codeEncrypte = codeEncrypte;

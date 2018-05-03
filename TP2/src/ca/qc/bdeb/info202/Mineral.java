@@ -13,11 +13,6 @@ import java.io.Serializable;
  */
 public class Mineral extends Specimen implements Serializable{
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 7857ab9d4879d15e22dbac126b548c59792c47dc
     public Mineral(int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee,String type) {
         super(numeroSerie, dateObservation, nom, taille, couleur, personne,quantiteObservee,type);
     }

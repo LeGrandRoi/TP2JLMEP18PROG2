@@ -18,10 +18,6 @@ public class Animal extends Specimen implements Serializable {
     };
     protected Sexe sexe;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 7857ab9d4879d15e22dbac126b548c59792c47dc
     public Animal(Sexe sexe, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee,String type) {
         super(numeroSerie, dateObservation, nom, taille, couleur, personne,quantiteObservee,type);
         this.sexe = sexe;
