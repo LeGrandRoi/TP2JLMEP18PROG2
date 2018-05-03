@@ -15,8 +15,6 @@ public class Poisson extends Animal {
     
     private TypeEau typeEau;
 
-    public Poisson(TypeEau typeEau, Sexe sexe, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee) {
-        super(sexe, numeroSerie, dateObservation, nom, taille, couleur, personne,quantiteObservee);
     public Poisson(TypeEau typeEau, Sexe sexe, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee,String type) {
         super(sexe, numeroSerie, dateObservation, nom, taille, couleur, personne,quantiteObservee,type);
         this.typeEau = typeEau;

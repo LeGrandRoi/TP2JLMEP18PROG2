@@ -87,7 +87,7 @@ public class Pokedex {
                break;
            case 2: nouveauSpecimen();
                break;
-           case 3:
+           case 3: modifierSpecimen();
                break;
            case 4: statistiques();
                break;
@@ -103,6 +103,7 @@ public class Pokedex {
    {
        int choix=0;
        boolean ok=true;
+       System.out.println("Vous avez choisi de consulter les spéimens.");
        do
        {
        try{
@@ -116,7 +117,7 @@ public class Pokedex {
        }while(!ok || choix<1 || choix>2);
        if (choix==1)
        {
-       System.out.println("Affichage de toutes les entrées du pokédex triés par nom:");
+       System.out.println("Affichage de toutes les entrées du pokédex (triés par nom):");
        System.out.println("1.- DE FAÇON CROISSANTE:");
        for (int i=1;i<liste.size();i++)
        {
@@ -301,6 +302,7 @@ public class Pokedex {
        }
    }
    
+   
    private void nouveauSpecimen()
    {
        TypeEau typeEau = null;
@@ -318,10 +320,10 @@ public class Pokedex {
            
        int typeS=0;
        boolean ok=true;
-       
+       System.out.println("Vous avez choisi de créer un nouveau spécimen.");
        do
        {
-       System.out.println("Type de spécimen:\n"
+       System.out.println("Veuillez choisir un type de spécimen:\n"
                + "1-Poisson.\n"
                + "2-Mammifère marin.\n"
                + "3-Plante auqatique.\n"
@@ -502,30 +504,6 @@ public class Pokedex {
             personne = personneActuelle;
         }
 
-
-        if (typeS == 1) {
-            Poisson poisson = new Poisson(typeEau, sexe, numeroSerie, dateObservation, nom, taille, couleur, personne, quantiteObservee);
-            liste.add(poisson);
-            cptPoisson = cptPoisson + 1;
-        } else if (typeS == 2) {
-            MammifereMarin mammifereMarin = new MammifereMarin(typeEau, typeManger, sexe, numeroSerie, dateObservation, nom, taille, couleur, personne, quantiteObservee);
-            liste.add(mammifereMarin);
-            cptMammifereMarin = cptMammifereMarin + 1;
-        } else if (typeS == 3) {
-            PlanteAquatique planteAquatique = new PlanteAquatique(typeEau, typePlante, numeroSerie, dateObservation, nom, taille, couleur, personne, quantiteObservee);
-            liste.add(planteAquatique);
-            cptPlanteAquatique = cptPlanteAquatique + 1;
-        } else if (typeS == 4) {
-            Mineral mineral = new Mineral(numeroSerie, dateObservation, nom, taille, couleur, personne, quantiteObservee);
-            liste.add(mineral);
-            cptMineral = cptMineral + 1;
-        } else if (typeS == 5) {
-            Autre autre = new Autre(sexe, numeroSerie, dateObservation, nom, taille, couleur, personne, quantiteObservee);
-            liste.add(autre);
-            cptAutre = cptAutre + 1;
-            ;
-        }
-
         
         if(typeS==1)
         {
@@ -587,6 +565,15 @@ public class Pokedex {
         System.out.println("Votre spécimen à été créé!");
         System.out.println("");
     }
+   
+   
+   private void modifierSpecimen()
+   {
+       System.out.println("Vous avez choisi de modifier un spécimen.");
+       System.out.println("Que voulez-vous faire?\n"
+               + "1. ");
+   }
+   
 
     private void statistiques() {
         System.out.println("Vous avez choisi les statistiques.");
@@ -800,7 +787,4 @@ public class Pokedex {
         }
     }
 
-    public void personne(String nom) {
-
-    }
 }
