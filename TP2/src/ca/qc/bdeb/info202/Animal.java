@@ -5,17 +5,23 @@
  */
 package ca.qc.bdeb.info202;
 
+import java.io.Serializable;
+
 /**
  *
  * @author 1745982
  */
-public class Animal extends Specimen {
+public class Animal extends Specimen implements Serializable {
     public enum Sexe{
         MALE,
         FEMELE
     };
     protected Sexe sexe;
 
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 1a962dd8f68e4df8b16522aa08d6f47a74389aac
     public Animal(Sexe sexe, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee,String type) {
         super(numeroSerie, dateObservation, nom, taille, couleur, personne,quantiteObservee,type);
         this.sexe = sexe;

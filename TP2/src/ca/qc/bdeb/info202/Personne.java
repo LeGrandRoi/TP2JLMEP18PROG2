@@ -19,8 +19,14 @@ public class Personne implements Serializable {
     private int age;
     private int nbActions;
 
+<<<<<<< HEAD
+   
+    public Personne( String nomUtilisisateur, String codeEncrypte,String nom, int age, int nbActions) {
+        
+=======
     public Personne( String nomUtilisisateur, String codeEncrypte,String nom, int age, int nbActions) 
         { 
+>>>>>>> 1a962dd8f68e4df8b16522aa08d6f47a74389aac
         this.nomUtilisisateur = nomUtilisisateur;
         this.codeEncrypte = codeEncrypte;
         this.nom = nom;

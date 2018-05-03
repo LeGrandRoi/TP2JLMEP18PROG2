@@ -5,24 +5,27 @@
  */
 package ca.qc.bdeb.info202;
 
+import java.io.Serializable;
+
 /**
  *
  * @author 1745982
  */
-public class MammifereMarin extends Animal {
+public class MammifereMarin extends Animal implements Serializable {
     public enum TypeEau {
         DOUCE,
         SALEE
     };
     
-    public  enum TypeManger {
-
+    
+    public enum TypeManger {
         CARNIVORE,
         VEGETARIEN
     };
     private TypeEau typeEau;
     private TypeManger typeManger;
 
+    
     public MammifereMarin(TypeEau typeEau, TypeManger typeManger, Sexe sexe, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee,String type) {
         super(sexe, numeroSerie, dateObservation, nom, taille, couleur, personne,quantiteObservee,type);
         this.typeEau = typeEau;
