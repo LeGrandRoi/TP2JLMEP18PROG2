@@ -30,7 +30,7 @@ import java.util.logging.Logger;
  */
 public class Pokedex  {
 
-    private ArrayList<Specimen> liste = new ArrayList();
+    private ArrayList<Specimen> liste = new ArrayList();   
     private Scanner clavier = new Scanner(System.in);
     private int compteur = compter(), compteurcolonne = compterligne();
     private String tabPersonne[][] = new String[compteur][compteurcolonne];
@@ -43,12 +43,8 @@ public class Pokedex  {
     int cptMineral = 0;
     int cptAutre = 0;
 
-    public Pokedex() {
-
-    }
-
     public void jouer() {
-        fichierBinaireOuverture(liste);
+        liste = fichierBinaireOuverture(liste);             
         remplir(tabPersonne);
         login();
         afficherMenu();
@@ -758,10 +754,6 @@ public class Pokedex  {
             listePersonne.add(personne);
         }
 
-        System.out.println(listePersonne.get(0).getNom());
-        System.out.println(listePersonne.get(1).getNom());
-        System.out.println(listePersonne.get(2).getNom());
-        System.out.println(listePersonne.get(3).getNom());
 
     }
 
@@ -848,7 +840,9 @@ public class Pokedex  {
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(liste);
             System.out.println("Le Pokédex est enregisté.");
-            System.out.println(liste.get(0));
+            for (int i = 0; i < liste.size(); i++) {
+                System.out.println(liste.get(i));          
+            }
             
         } catch (java.io.IOException e) {
             System.out.println("Erreur d'entrées-sorties");
@@ -857,13 +851,17 @@ public class Pokedex  {
         }
     }
 
-    public void fichierBinaireOuverture(ArrayList<Specimen> liste) {
+    public ArrayList<Specimen> fichierBinaireOuverture(ArrayList<Specimen> liste) {
         try {
             FileInputStream fichier = new FileInputStream("pokédex.bin");
 
             ObjectInputStream ois = new ObjectInputStream(fichier);
             liste = (ArrayList<Specimen>) ois.readObject();
-            System.out.println("Version du Pokédec chargé.");            
+            System.out.println("Version du Pokédec chargé.");  
+            for (int i = 0; i < liste.size(); i++) {
+                System.out.println(liste.get(i));          
+            }
+            
         } catch (FileNotFoundException e){
             System.out.println("Fichier non trouvable.");          
         }
@@ -874,7 +872,7 @@ public class Pokedex  {
             System.out.println(e.getMessage());
             e.printStackTrace();
         } 
-
+        return liste;
     }
 
 }
