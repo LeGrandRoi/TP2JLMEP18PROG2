@@ -19,7 +19,7 @@ public class Personne implements Serializable {
     private int age;
     private int nbActions;
 
-    public Personne( String nomUtilisisateur, String codeEncrypte,String nom, int age) {
+   
     public Personne( String nomUtilisisateur, String codeEncrypte,String nom, int age, int nbActions) {
         
         this.nomUtilisisateur = nomUtilisisateur;

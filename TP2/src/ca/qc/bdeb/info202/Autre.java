@@ -5,14 +5,15 @@
  */
 package ca.qc.bdeb.info202;
 
+import java.io.Serializable;
+
 /**
  *
  * @author 1745982
  */
-public class Autre extends Animal {
+public class Autre extends Animal implements Serializable{
     
-    public Autre(Sexe sexe, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee) {
-        super(sexe, numeroSerie, dateObservation, nom, taille, couleur, personne,quantiteObservee);
+   
     public Autre(Sexe sexe, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee,String type) {
         super(sexe, numeroSerie, dateObservation, nom, taille, couleur, personne,quantiteObservee,type);
     }

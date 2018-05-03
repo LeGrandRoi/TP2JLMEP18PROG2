@@ -17,6 +17,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Stack;
@@ -27,7 +28,7 @@ import java.util.logging.Logger;
  *
  * @author 1745982
  */
-public class Pokedex {
+public class Pokedex  {
 
     private ArrayList<Specimen> liste = new ArrayList();
     private Scanner clavier = new Scanner(System.in);
@@ -91,7 +92,7 @@ public class Pokedex {
                break;
            case 4: statistiques();
                break;
-           case 5:
+           case 5: fichierBinaireFermeture(liste);
                break;
        }
        } while (choix!=5);
@@ -760,7 +761,8 @@ public class Pokedex {
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(liste);
             System.out.println("Le Pokédex est enregisté.");
-            oos.close();
+            System.out.println(liste.get(0));
+            
         } catch (java.io.IOException e) {
             System.out.println("Erreur d'entrées-sorties");
             System.out.println(e.getMessage());
@@ -774,17 +776,18 @@ public class Pokedex {
 
             ObjectInputStream ois = new ObjectInputStream(fichier);
             liste = (ArrayList<Specimen>) ois.readObject();
-            System.out.println("Version du Pokédec chargé.");
-            
+            System.out.println("Version du Pokédec chargé.");            
         } catch (FileNotFoundException e){
-            System.out.println("Fichier non trouvable.");
+            System.out.println("Fichier non trouvable.");          
+        }
+                catch (ClassNotFoundException e) {
+            System.out.println("Erreur classe introuvable");
         }catch (IOException e) {
             System.out.println("Aucune version du Pokédex trouvé.");
-
+            System.out.println(e.getMessage());
+            e.printStackTrace();
         } 
-        catch (ClassNotFoundException e) {
-            System.out.println("Erreur classe introuvable");
-        }
+
     }
 
 }

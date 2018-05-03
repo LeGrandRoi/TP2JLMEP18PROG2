@@ -6,12 +6,13 @@
 package ca.qc.bdeb.info202;
 
 import ca.qc.bdeb.info202.MammifereMarin.TypeEau;
+import java.io.Serializable;
 
 /**
  *
  * @author 1745982
  */
-public class Poisson extends Animal {
+public class Poisson extends Animal implements Serializable{
     
     private TypeEau typeEau;
 

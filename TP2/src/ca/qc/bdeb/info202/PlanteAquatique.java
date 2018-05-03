@@ -6,12 +6,13 @@
 package ca.qc.bdeb.info202;
 
 import ca.qc.bdeb.info202.MammifereMarin.TypeEau;
+import java.io.Serializable;
 
 /**
  *
  * @author 1745982
  */
-public class PlanteAquatique extends Specimen {
+public class PlanteAquatique extends Specimen implements Serializable {
    
     private TypeEau typeEau;
     public enum TypePlante{
@@ -19,6 +20,7 @@ public class PlanteAquatique extends Specimen {
         IMMERGEE
     };
     private TypePlante typePlante;
+
 
     public PlanteAquatique(TypeEau typeEau, TypePlante typePlante, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee,String type) {
         super(numeroSerie, dateObservation, nom, taille, couleur, personne,quantiteObservee,type);
