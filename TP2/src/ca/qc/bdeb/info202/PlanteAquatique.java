@@ -48,7 +48,7 @@ public class PlanteAquatique extends Specimen implements Serializable {
     @Override
     public String toString()
     {
-        return "numéroSérie: "+numeroSerie+", dateObservation: "+dateObservation+", nom: "+nom+", taille: "+taille+", couleur: "+couleur+", personne: "+personne+", quantitéObservée: "+quantiteObservee+", type: "+type+", typeEau: "+typeEau+", typePlante: "+typePlante;
+        return "numéroSérie: "+numeroSerie+", dateObservation: "+dateObservation+", nom: "+nom+", taille: "+taille+", couleur: "+couleur+", personne: "+personne.getNom()+", quantitéObservée: "+quantiteObservee+", type: "+type+", typeEau: "+typeEau+", typePlante: "+typePlante;
     }
     
 }
