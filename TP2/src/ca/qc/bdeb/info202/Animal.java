@@ -11,12 +11,14 @@ import java.io.Serializable;
  *
  * @author 1745982
  */
-public class Animal extends Specimen implements Serializable {
+public abstract class Animal extends Specimen implements Serializable {
     public enum Sexe{
         MALE,
         FEMELE
     };
     protected Sexe sexe;
+    
+    protected String cri;
 
     public Animal(Sexe sexe, int numeroSerie, String dateObservation, String nom, int taille, String couleur, Personne personne, int quantiteObservee,String type) {
         super(numeroSerie, dateObservation, nom, taille, couleur, personne,quantiteObservee,type);
@@ -26,7 +28,7 @@ public class Animal extends Specimen implements Serializable {
     
     
     
-   // protected abstract void cri();
+    public abstract void cri();
 
     public Sexe getSexe() {
         return sexe;

@@ -252,7 +252,7 @@ public class Pokedex  {
            {
                System.out.println("affichage de toutes les plantes aquatiques triés par taille:");
                Specimen temp;
-               for (int position=liste.size();position>=0;position--)
+               for (int position=liste.size()-1;position>=0;position--)
                {
                    if (liste.get(position).getType().equals("PlanteAquatique"))
                    {
@@ -403,6 +403,7 @@ public class Pokedex  {
                
        }
        
+       
         if (typeS==1 || typeS==2 || typeS==5)
         {
             int choix = 0;
@@ -513,6 +514,7 @@ public class Pokedex  {
         if (typeS==1)
         {
             Poisson poisson=new Poisson (typeEau,sexe,numeroSerie,dateObservation,nom,taille,couleur,personne,quantiteObservee,type);
+            poisson.cri();
             liste.add(poisson);
             cptPoisson=cptPoisson+1;
             personneActuelle.setNbActions(personneActuelle.getNbActions()+1);
@@ -520,6 +522,7 @@ public class Pokedex  {
         else if (typeS==2)
         {
             MammifereMarin mammifereMarin=new MammifereMarin(typeEau,typeManger,sexe,numeroSerie,dateObservation,nom,taille,couleur,personne,quantiteObservee,type);
+            mammifereMarin.cri();
             liste.add(mammifereMarin);
             cptMammifereMarin=cptMammifereMarin+1;
             personneActuelle.setNbActions(personneActuelle.getNbActions()+1);
@@ -541,6 +544,7 @@ public class Pokedex  {
         else if(typeS==5)
         {
             Autre autre=new Autre(sexe,numeroSerie,dateObservation,nom,taille,couleur,personne,quantiteObservee,type);
+            autre.cri();
             liste.add(autre);
             cptAutre=cptAutre+1;
             personneActuelle.setNbActions(personneActuelle.getNbActions()+1);
@@ -963,8 +967,6 @@ public class Pokedex  {
             
         } catch (java.io.IOException e) {
             System.out.println("Erreur d'entrées-sorties");
-            System.out.println(e.getMessage());
-            e.printStackTrace();
         }
     }
 
@@ -985,9 +987,7 @@ public class Pokedex  {
                 catch (ClassNotFoundException e) {
             System.out.println("Erreur classe introuvable");
         }catch (IOException e) {
-            System.out.println("Aucune version du Pokédex trouvé.");
-            System.out.println(e.getMessage());
-            e.printStackTrace();
+            System.out.println("Aucune version du Pokédex trouvé.");          
         } 
         return liste;
     }

@@ -6,6 +6,7 @@
 package ca.qc.bdeb.info202;
 
 import java.io.Serializable;
+import java.util.Scanner;
 
 /**
  *
@@ -21,7 +22,14 @@ public class Autre extends Animal implements Serializable{
     @Override
     public String toString()
     {
-        return "numéroSérie: "+numeroSerie+", dateObservation: "+dateObservation+", nom: "+nom+", taille: "+taille+", couleur: "+couleur+", personne: "+personne.getNom()+", quantitéObservée: "+quantiteObservee+", type: "+type+", sexe: "+sexe;
+        return "numéroSérie: "+numeroSerie+", dateObservation: "+dateObservation+", nom: "+nom+", taille: "+taille+", couleur: "+couleur+", personne: "+personne.getNom()+", quantitéObservée: "+quantiteObservee+", type: "+type+", sexe: "+sexe+", cri: "+cri;
+    }
+
+    @Override
+    public void cri() {
+         Scanner clavier = new Scanner(System.in);
+         System.out.println("Entrez le cri de l'animal.");
+         cri=clavier.nextLine();
     }
     
     
