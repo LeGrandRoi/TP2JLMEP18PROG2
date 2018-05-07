@@ -203,8 +203,7 @@ public class Pokedex {
                     for (int i = 0; i < liste.size(); i++) {
                         if (liste.get(i).getType().equals("MammifereMarin")) {
                             System.out.println(liste.get(i).toString());
-                        }
-<<<<<<< HEAD
+
                    }
                }
                for (int i=0;i<liste.size();i++)
@@ -216,7 +215,7 @@ public class Pokedex {
                }
            }
            
-           else if(choixx==2)
+           else if(choixConsulter==2)
            {
                System.out.println("affichage de tous les poissons triés par taille:");
                Specimen temp;
@@ -244,9 +243,9 @@ public class Pokedex {
                }
            }
            
-           else if(choixx==3)
+           else if(choixConsulter==3)
            {
-               System.out.println("affichage de tous les mammifères marina triés par taille:");
+               System.out.println("affichage de tous les mammifères marins triés par taille:");
                Specimen temp;
                for (int position=liste.size();position>=0;position--)
                {
@@ -272,7 +271,7 @@ public class Pokedex {
                }
            }
            
-           else if(choixx==4)
+           else if(choixConsulter==4)
            {
                System.out.println("affichage de toutes les plantes aquatiques triés par taille:");
                Specimen temp;
@@ -300,7 +299,7 @@ public class Pokedex {
                }
            }
            
-           else if(choixx==5)
+           else if(choixConsulter==5)
            {
                System.out.println("affichage de tous les minéraux triés par taille:");
                Specimen temp;
@@ -330,103 +329,10 @@ public class Pokedex {
        }
        }
    }
-   
-   
-   private void nouveauSpecimen()
-   {
-       TypeEau typeEau = null;
-           TypePlante typePlante=null;
-           TypeManger typeManger=null;
-           Sexe sexe = null;
-           int numeroSerie=0;
-           String dateObservation=null;
-           String nom=null;
-           int taille=0;
-           String couleur=null;
-           Personne personne=null;
-           int quantiteObservee=0;
-           String type = null;
-           
-       int typeS=0;
-       boolean ok=true;
-       System.out.println("Vous avez choisi de créer un nouveau spécimen.");
-       do
-       {
-       System.out.println("Veuillez choisir un type de spécimen:\n"
-               + "1-Poisson.\n"
-               + "2-Mammifère marin.\n"
-               + "3-Plante auqatique.\n"
-               + "4-Minéral.\n"
-               + "5-Autre.\n");
-       try
-       {
-           ok=true;
-           typeS=Integer.parseInt(clavier.nextLine());
-       }
-       catch(NumberFormatException e){ 
-           ok=false;
-       }
-       if (typeS<1 || typeS>5)
-       {
-           System.out.println("I. Veuillez entrer un choix entre 1 et 5.");
-           System.out.println("");
-       }
-       } while (typeS<1 || typeS>5 || !ok);
-       
-       
-       if (typeS==1 || typeS==2 || typeS==3 || typeS==4 || typeS==5)
-       {
-           System.out.println("Veuillez entrer le nom du spécimen:");
-           nom=clavier.nextLine();
-       }
-       
-       
-       if (typeS==1 || typeS==2 || typeS==3 || typeS==4 || typeS==5)
-       {
-=======
-                    }
-                } else if (choixSpecimen == 4) {
-                    System.out.println("affichage de toutes les plantes aquatiques triés par taille:");
-                    Specimen temp;
-                    for (int position = liste.size()-1; position >= 0; position--) {
-                        if (liste.get(position).getType().equals("PlanteAquatique")) {
-                            for (int recherche = 0; recherche <= position - 1; recherche++) {
-                                if (liste.get(recherche).getTaille() > liste.get(recherche + 1).getTaille()) {
-                                    temp = liste.get(recherche);
-                                    liste.set(recherche, liste.get(recherche + 1));
-                                    liste.set(recherche + 1, temp);
-                                }
-                            }
-                        }
-                    }
-                    for (int i = 0; i < liste.size(); i++) {
-                        if (liste.get(i).getType().equals("PlanteAquatique")) {
-                            System.out.println(liste.get(i).toString());
-                        }
-                    }
-                } else if (choixSpecimen == 5) {
-                    System.out.println("affichage de tous les minéraux triés par taille:");
-                    Specimen temp;
-                    for (int position = liste.size()-1; position >= 0; position--) {
-                        if (liste.get(position).getType().equals("Mineral")) {
-                            for (int recherche = 0; recherche <= position - 1; recherche++) {
-                                if (liste.get(recherche).getTaille() > liste.get(recherche + 1).getTaille()) {
-                                    temp = liste.get(recherche);
-                                    liste.set(recherche, liste.get(recherche + 1));
-                                    liste.set(recherche + 1, temp);
-                                }
-                            }
-                        }
-                    }
-                    for (int i = 0; i < liste.size(); i++) {
-                        if (liste.get(i).getType().equals("Mineral")) {
-                            System.out.println(liste.get(i).toString());
-                        }
-                    }
-                }
-            }
-        }
-    }
+ 
+  
+               
+    
 
     private void nouveauSpecimen() {
         TypeEau typeEau = null;
@@ -470,7 +376,7 @@ public class Pokedex {
         }
 
         if (typeS == 1 || typeS == 2 || typeS == 3 || typeS == 4 || typeS == 5) {
->>>>>>> 27d0be040e858e892a9deedd51a7a030e0d0e62e
+
             do {
                 System.out.println("Veuillez entrer la taille du spécimen: (cm)");
 
@@ -495,7 +401,7 @@ public class Pokedex {
 
         if (typeS == 1 || typeS == 2 || typeS == 3 || typeS == 4 || typeS == 5) {
             do {
-<<<<<<< HEAD
+
            System.out.println("Veuillez entrer la quantitée observée:");
           
            try{
@@ -512,7 +418,7 @@ public class Pokedex {
        
         if (typeS==1 || typeS==2 || typeS==5)
         {
-=======
+
                 System.out.println("Veuillez entrer la quantitée observée:");
 
                 try {
@@ -523,10 +429,10 @@ public class Pokedex {
                 }
             } while (!ok);
 
-        }
+        
 
         if (typeS == 1 || typeS == 2 || typeS == 5) {
->>>>>>> 27d0be040e858e892a9deedd51a7a030e0d0e62e
+
             int choix = 0;
             do {
                 System.out.println("Veuillez entrer le genre: (1. pour mâle et 2. pour femelle)");
@@ -622,37 +528,21 @@ public class Pokedex {
         } else if (typeS == 5) {
             type = "Autre";
         }
-<<<<<<< HEAD
-        else if(typeS==5)
-        {
-            type="Autre";
-        }
-        
-        if (typeS==1)
-        {
-            Poisson poisson=new Poisson (typeEau,sexe,numeroSerie,dateObservation,nom,taille,couleur,personne,quantiteObservee,type);
-            poisson.cri();
-            liste.add(poisson);
-            cptPoisson=cptPoisson+1;
-            personneActuelle.setNbActions(personneActuelle.getNbActions()+1);
-        }
-        else if (typeS==2)
-        {
-            MammifereMarin mammifereMarin=new MammifereMarin(typeEau,typeManger,sexe,numeroSerie,dateObservation,nom,taille,couleur,personne,quantiteObservee,type);
-            mammifereMarin.cri();
-=======
 
+        
         if (typeS == 1) {
             Poisson poisson = new Poisson(typeEau, sexe, numeroSerie, dateObservation, nom, taille, couleur, personne, quantiteObservee, type);
+            poisson.cri();
             liste.add(poisson);
             cptPoisson = cptPoisson + 1;
             personneActuelle.setNbActions(personneActuelle.getNbActions() + 1);
         } else if (typeS == 2) {
             MammifereMarin mammifereMarin = new MammifereMarin(typeEau, typeManger, sexe, numeroSerie, dateObservation, nom, taille, couleur, personne, quantiteObservee, type);
->>>>>>> 27d0be040e858e892a9deedd51a7a030e0d0e62e
+            mammifereMarin.cri();
             liste.add(mammifereMarin);
             cptMammifereMarin = cptMammifereMarin + 1;
             personneActuelle.setNbActions(personneActuelle.getNbActions() + 1);
+            
         } else if (typeS == 3) {
             PlanteAquatique planteAquatique = new PlanteAquatique(typeEau, typePlante, numeroSerie, dateObservation, nom, taille, couleur, personne, quantiteObservee, type);
             liste.add(planteAquatique);
@@ -661,7 +551,7 @@ public class Pokedex {
         } else if (typeS == 4) {
             Mineral mineral = new Mineral(numeroSerie, dateObservation, nom, taille, couleur, personne, quantiteObservee, type);
             liste.add(mineral);
-<<<<<<< HEAD
+
             cptMineral=cptMineral+1;
             personneActuelle.setNbActions(personneActuelle.getNbActions()+1);
         }
@@ -669,20 +559,13 @@ public class Pokedex {
         {
             Autre autre=new Autre(sexe,numeroSerie,dateObservation,nom,taille,couleur,personne,quantiteObservee,type);
             autre.cri();
-=======
             cptMineral = cptMineral + 1;
             personneActuelle.setNbActions(personneActuelle.getNbActions() + 1);
-        } else if (typeS == 5) {
-            Autre autre = new Autre(sexe, numeroSerie, dateObservation, nom, taille, couleur, personne, quantiteObservee, type);
->>>>>>> 27d0be040e858e892a9deedd51a7a030e0d0e62e
-            liste.add(autre);
-            cptAutre = cptAutre + 1;
-            personneActuelle.setNbActions(personneActuelle.getNbActions() + 1);
-            ;
-        }
+       
 
         System.out.println("Votre spécimen à été créé!");
         System.out.println("");
+    }
     }
 
     private void modifierSpecimen() {
@@ -1065,17 +948,12 @@ public class Pokedex {
             System.out.println("Fichier non trouvable.");
         } catch (ClassNotFoundException e) {
             System.out.println("Erreur classe introuvable");
-<<<<<<< HEAD
+
         }catch (IOException e) {
             System.out.println("Aucune version du Pokédex trouvé.");          
-        } 
-=======
-        } catch (IOException e) {
-            System.out.println("Aucune version du Pokédex trouvé.");
-            System.out.println(e.getMessage());
-            e.printStackTrace();
+
         }
->>>>>>> 27d0be040e858e892a9deedd51a7a030e0d0e62e
+
         return liste;
     }
 
