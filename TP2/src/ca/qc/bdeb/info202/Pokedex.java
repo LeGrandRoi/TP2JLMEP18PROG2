@@ -36,7 +36,7 @@ public class Pokedex {
     private String tabPersonne[][] = new String[compteur][compteurcolonne];
     private ArrayList<Personne> listePersonne = new ArrayList();
     Personne personneActuelle;
-    int cptSerie = 0;
+    int cptSerie = 0; 
     int cptPoisson = 0;
     int cptMammifereMarin = 0;
     int cptPlanteAquatique;
