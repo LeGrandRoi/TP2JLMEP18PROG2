@@ -131,7 +131,7 @@ public class Pokedex {
                     pile.push(liste.get(i));
                 }
                 System.out.println("2.- DE FAÇON DÉCROISSANTE: ");
-                for (int i = 0; i < pile.size(); i++) {
+                while (pile.size()>=0) {
                     System.out.println(pile.pop().toString());
                 }
             } else if (choixConsulter == 2) {
@@ -404,6 +404,7 @@ public class Pokedex {
 
         if (typeS == 1 || typeS == 2 || typeS == 3 || typeS == 4 || typeS == 5) {
             numeroSerie = cptSerie + 1;
+            cptSerie=numeroSerie;
         }
 
         if (typeS == 1 || typeS == 2 || typeS == 3 || typeS == 4 || typeS == 5) {
