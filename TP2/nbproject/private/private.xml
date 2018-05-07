@@ -2,6 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group>
             <file>file:/H:/TP2JLMEP18PROG2/TP2/src/ca/qc/bdeb/info202/TP2.java</file>
             <file>file:/H:/TP2JLMEP18PROG2/TP2/src/ca/qc/bdeb/info202/Mineral.java</file>
@@ -14,5 +15,8 @@
             <file>file:/H:/TP2JLMEP18PROG2/TP2/src/ca/qc/bdeb/info202/MammifereMarin.java</file>
             <file>file:/H:/TP2JLMEP18PROG2/TP2/src/ca/qc/bdeb/info202/Personne.java</file>
         </group>
+=======
+        <group/>
+>>>>>>> 80c6e414fa68ff9fea7a2d788f12f233c1b1c21c
     </open-files>
 </project-private>
